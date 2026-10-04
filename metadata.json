@@ -1,0 +1,10 @@
+{
+  "name": "EduTicket Pro",
+  "description": "Secure university examination hall ticket system for East Africa University.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

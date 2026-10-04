@@ -1,0 +1,199 @@
+/* 
+  Global Responsive Styles 
+  Using Flexbox and Media Queries for 100% Responsiveness
+*/
+
+/* @import "tailwindcss" is not needed when using CDN */
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* Custom Flexbox Layouts */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-col-mobile {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Media Queries for specific breakpoints */
+@media (min-width: 768px) {
+  .flex-col-mobile {
+    flex-direction: row;
+  }
+}
+
+/* Table responsiveness */
+.table-responsive-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 #f1f5f9;
+}
+.table-responsive-container::-webkit-scrollbar {
+  height: 8px;
+}
+.table-responsive-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 8px;
+}
+.table-responsive-container::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 8px;
+}
+.table-responsive-container::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Proper, accessible scrollbars everywhere */
+.no-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.no-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 8px;
+}
+.no-scrollbar::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 8px;
+  border: 2px solid #f1f5f9;
+}
+.no-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+.no-scrollbar {
+  -ms-overflow-style: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 #f1f5f9;
+}
+
+/* 100% Responsive Grid Adjustments */
+@media (max-width: 640px) {
+  .responsive-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .responsive-padding {
+    padding: 1rem !important;
+  }
+  
+  .responsive-text {
+    font-size: 0.875rem !important;
+  }
+}
+
+/* Custom wider scrollbar for Admin Dashboard */
+.scrollbar-admin::-webkit-scrollbar {
+  width: 18px;
+  height: 18px;
+}
+.scrollbar-admin::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 12px;
+}
+.scrollbar-admin::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 12px;
+  border: 4px solid #f1f5f9;
+}
+.scrollbar-admin::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+.scrollbar-admin {
+  scrollbar-width: auto;
+  scrollbar-color: #cbd5e1 #f1f5f9;
+}
+
+/* Accessibility Contrast and Dark Theme Overrides */
+.dark, .dark body {
+  background-color: #020617 !important; /* slate-950 */
+  color: #f1f5f9 !important; /* slate-100 */
+}
+
+/* Custom wider scrollbar for Admin Dashboard on Dark Mode */
+.dark .scrollbar-admin::-webkit-scrollbar-track {
+  background: #0f172a !important;
+}
+.dark .scrollbar-admin::-webkit-scrollbar-thumb {
+  background: #334155 !important;
+  border: 4px solid #0f172a !important;
+}
+.dark .scrollbar-admin::-webkit-scrollbar-thumb:hover {
+  background: #475569 !important;
+}
+
+/* Modal and card surfaces adaptation */
+.dark .bg-white {
+  background-color: #0f172a !important; /* slate-900 */
+}
+.dark .bg-slate-50 {
+  background-color: #1e293b !important; /* slate-800 */
+}
+.dark .bg-slate-100 {
+  background-color: #334155 !important; /* slate-700 */
+}
+
+/* Text and brand overrides with high-contrast rules */
+.dark .text-slate-900 {
+  color: #f8fafc !important; /* slate-50 */
+}
+.dark .text-slate-800 {
+  color: #f1f5f9 !important; /* slate-100 */
+}
+.dark .text-slate-700 {
+  color: #e2e8f0 !important; /* slate-200 */
+}
+.dark .text-slate-600 {
+  color: #cbd5e1 !important; /* slate-300 */
+}
+.dark .text-slate-500 {
+  color: #94a3b8 !important; /* slate-400 */
+}
+.dark .text-slate-400 {
+  color: #64748b !important; /* slate-500 */
+}
+
+/* Blue brand titles readability correction */
+.dark .text-blue-900 {
+  color: #60a5fa !important; /* blue-400 */
+}
+.dark .text-blue-950 {
+  color: #93c5fd !important; /* blue-300 */
+}
+
+/* Border resolution */
+.dark .border-slate-50,
+.dark .border-slate-100,
+.dark .border-slate-200 {
+  border-color: #1e293b !important; /* slate-800 */
+}
+
+/* Table elements */
+.dark tr:hover {
+  background-color: rgba(30, 41, 59, 0.4) !important;
+}
+.dark input, 
+.dark select, 
+.dark textarea {
+  background-color: #1e293b !important; /* slate-800 */
+  color: #f8fafc !important; /* slate-50 */
+  border-color: #334155 !important; /* slate-700 */
+}
+.dark input::placeholder {
+  color: #64748b !important;
+}
+
